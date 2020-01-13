@@ -11,13 +11,18 @@ console.log(userNumber);
 var cpuNumber = Math.floor(Math.random() * 5) + 1;
 console.log(cpuNumber);
 
-var addNumber = userNumber + cpuNumber;
-console.log(addNumber);
+var whoWon = checkOddEven(userChoice);
+if (userChoice == whoWon) {
+  alert('Hai Vinto');
+} else {
+  alert('Hai Perso');
+}
 
-if (userChoice == 'Pari' && addNumber % 2 == 0) {
-  console.log('Hai Vinto');
-} else if (userChoice == 'Dispari' && addNumber % 2 != 0) {
-  console.log('Hai Vinto');
-} else if (userChoice == 'Pari') {
-
+function checkOddEven(numero) {
+  var addNumber = userNumber + cpuNumber;
+  if (addNumber % 2 == 0) {
+    return 'pari';
+  } else {
+    return 'dispari';
+  }
 }
